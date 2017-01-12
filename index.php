@@ -19,4 +19,12 @@ $app->get('/api/users_text', function () {
 
 $app->get('/api/users', 'UserController::getAllUsers');
 
+$app->get('/api/expenses/get', 'ExpenseController::getExpenses');
+
+$app->get('/api/expenses/add', 'ExpenseController::addExpense');
+
+$app->get('/api/expenses/update', 'ExpenseController::updateExpense');
+
+$app->get('/api/expenses/remove', 'ExpenseController::removeExpense');
+
 $app->run();
