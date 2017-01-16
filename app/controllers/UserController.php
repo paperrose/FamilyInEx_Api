@@ -13,7 +13,7 @@ class UserController extends Controller
     }
 
     public function getAllUsers(Request $request, Application $app) {
-        $que = "SELECT * FROM users";
+        $que = "SELECT *, unix_timestamp(created_at) as created FROM users";
         $db_sql = $this->db->query($que);
         $response = ["result" => $db_sql];
         return $app->json($response);

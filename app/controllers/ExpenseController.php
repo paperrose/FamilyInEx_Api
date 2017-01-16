@@ -70,7 +70,6 @@ class ExpenseController extends Controller
         return $app->json($response);
     }
 
-
     private function getAllETypeCurrentExpenses(Request $request, Application $app) {
         $start = strtotime(date('01-m-Y'));
         $que = "SELECT * FROM expenses WHERE expense_type_id = ".$request->get('expense_type_id')." AND created_at BETWEEN $start AND CURRENT_TIMESTAMP ";
